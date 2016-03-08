@@ -35,7 +35,7 @@ ISR(INT0_vect) \
 		MIRF_CLEAR_RX_DR; \
 		USART_transmit_byte_array(message, payload_size); \
 		if(WSN_is_new_node_message(message, payload_size)) { \
-			mount_address_package(); \
+			mount_and_send_address_package(); \
 		} else if(message[0] == 'M') { \
 			if(message[2] == 'A') { \
 				brightness = (message[4] << 8) | message[3]; \

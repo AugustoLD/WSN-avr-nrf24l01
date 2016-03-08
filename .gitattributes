@@ -1,0 +1,6 @@
+*.h linguist-language=C
+gas_node/Makefile linguist-vendored
+light_node/Makefile linguist-vendored
+master_node/Makefile linguist-vendored
+relay_node/Makefile linguist-vendored
+temp+hum_node/Makefile linguist-vendored
