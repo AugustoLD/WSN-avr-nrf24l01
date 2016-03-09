@@ -42,6 +42,7 @@ ISR(INT0_vect) \
 				WSN_mount_fail_message(); \
 				MIRF_TX; \
 				MIRF_send_data(parent_address, message, 6); \
+				return; \
 			} \
 		} \
 	} \
