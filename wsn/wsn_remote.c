@@ -54,7 +54,6 @@ void WSN_ingress(void)
 	_delay_ms(10);
 	WSN_mount_new_node_message();
 	MIRF_TX;
-	uint8_t i;
 	MIRF_send_data(MASTER_ADDR, message, ADDR_SIZE + 3);
 	_delay_ms(50);
 	if(parent_address[0]) return;
