@@ -77,6 +77,11 @@ ISR(INT0_vect) \
 			case 'P': \
 				memcpy(parent_address, &data[1], ADDR_SIZE); \
 				WSN_push_payload(); \
+				WSN_mount_new_node_message();
+				ignore_next_pkg = 1;
+				parent_oriented = 1;
+				MIRF_TX;
+				MIRF_send_data(parent_address, message, ADDR_SIZE + 3);
 				break; \
 			case 'R': \
 				WSN_push_payload(); \

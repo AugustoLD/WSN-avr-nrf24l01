@@ -55,12 +55,10 @@ void WSN_ingress(void)
 	WSN_mount_new_node_message();
 	MIRF_TX;
 	uint8_t i;
-	for(i = 0; i < 3; i++) {
-		MIRF_send_data(MASTER_ADDR, message, ADDR_SIZE + 3);
-		_delay_ms(50);
-		if(parent_address[0]) return;
-	}
-	MIRF_send_data(BROADCAST_ADDR, message, ADDR_SIZE + 3);
+	MIRF_send_data(MASTER_ADDR, message, ADDR_SIZE + 3);
+	_delay_ms(50);
+	if(parent_address[0]) return;
+	MIRF_send_data(BROADCAST_ADDR, (uint8_t*)"R", 1);
 	_delay_ms(50);
 	if(!parent_address[0]) {
 		WSN_node_shutdown();

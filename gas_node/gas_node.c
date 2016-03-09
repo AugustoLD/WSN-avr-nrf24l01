@@ -5,7 +5,7 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#define GAS_THRESHOLD 300
+#define GAS_THRESHOLD 500
 
 volatile uint8_t* LED_DDR = &DDRB;
 volatile uint8_t* LED_PORT = &PORTB;
